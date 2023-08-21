@@ -3,6 +3,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { config } from 'dotenv';
 import { connectDB } from './src/database/connectDB.js';
+import router from './src/routes/index.js';
 
 const app = express();
 
@@ -31,6 +32,8 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     res.send("hello");
 })
+
+app.use('/api/v1', router);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on http://localhost:${process.env.PORT}`);
