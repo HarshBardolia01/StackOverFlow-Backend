@@ -30,7 +30,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get('/', (req, res) => {
-    res.send("hello");
+    res.send("hello, this is a stackoverflow clone backend");
 })
 
 app.use('/api/v1', router);
